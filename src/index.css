@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+
+
+@theme {
+    --font-Mandrope: "Manrope", sans-serif; 
+    --color-first: rgba(38,38,40,0.14);
+    --color-input: rgb(153, 153, 153);
+    --color-second: rgba(135,135,142,0.1);
+    --color-yellow1: #b47d17;
+    --color-yellow2: #c28a24;
+    --color-border: #272729;
+    --color-yellowBorder: #EBC090;
+    --color-form: #242525;
+    --color-button: rgba(255, 255, 255, 0.15);
+}
+.container{
+    @apply w-full max-w-[400px] mx-auto px-5 md:max-w-[1220px]
+}
+ul a.active{
+    @apply opacity-100
+}
+@keyframes marqueeright {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+}
+@keyframes marqueeleft {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+    display: flex;
+    width: 200%;
+    animation: marqueeleft 10s linear infinite;
+}
+.animate-marquee2 {
+    display: flex;
+    width: 200%;
+    animation: marqueeright 10s linear infinite;
+}
+@layer utilities {
+    .no-spinner::-webkit-inner-spin-button,
+    .no-spinner::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0; }
+      .no-spinner {
+        -moz-appearance: textfield;
+      }
+    
+}
+::selection {
+    background-color: #b47d17;
+    color: white;
+  }
+  
