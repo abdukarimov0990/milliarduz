@@ -1,4 +1,4 @@
-import bekzod from "../img/bekzod.avif";
+import bekzod from "../img/Bekzod.avif";
 import begzod from "../img/begzod.avif";
 import odilbek from "../img/odilbek.avif";
 import sirojiddin from "../img/sirojiddin.avif";
