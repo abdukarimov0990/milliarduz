@@ -48,7 +48,7 @@ import instagram from "../img/instagram.png";
 import facebook from "../img/facebook.png";
 import telegram from "../img/telegram.png";
 import youtube from "../img/youtube.png";
-import call from "../img/call.png"
+import call from "../img/call.png";
 
  export const member = [
   {
