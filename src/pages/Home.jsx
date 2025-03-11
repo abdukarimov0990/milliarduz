@@ -143,7 +143,7 @@ const Home = () => {
           </ul>
         </div>
       </section>      <div className="video_container relative pb-16">
-        <video src={video} muted loop autoPlay className='w-full' >
+        <video src={video} muted loop autoPlay className='w-screen' >
 
         </video>
         <div className="container flex justify-between absolute top-16 left-0 right-0 " >
@@ -313,7 +313,7 @@ const Home = () => {
             </h1>
 
           </div>
-          <ul className='flex flex-wrap gap-x-12 gap-y-7'>
+          <ul className='flex flex-wrap flex-col md:flex-row gap-x-12 gap-y-7'>
             <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
@@ -459,7 +459,7 @@ const Home = () => {
           </div>
           <ul>
             <Swiper
-              slidesPerView={2}
+              slidesPerView={1}
               spaceBetween={10}
               pagination={{
                 clickable: true,
@@ -474,21 +474,21 @@ const Home = () => {
                   spaceBetween: 40,
                 },
                 1024: {
-                  slidesPerView: 1,
+                  slidesPerView: 2.2,
                   spaceBetween: 50,
                 },
               }}
               modules={[]}
-              className="mySwiper"
+              className="mySwiper "
             >
               {
                 trips.map(function (trip) {
                   return (
-                    <SwiperSlide onClick={() => openModal(trip)} className='cursor-pointer even:mt-5 bg-gradient-to-br from-first to-second p-7 border-border border rounded-lg'>
+                    <SwiperSlide onClick={(e) => Setshow(true)} className='cursor-pointer even:mt-5 bg-gradient-to-br from-first to-second p-7 border-border border rounded-lg'>
                       <div className="mb-4 flex justify-center"><img src={trip.flag} alt="flag" className='w-12' /></div>
                       <img src={trip.img} alt="flag" className='w-full mb-4 rounded-lg h-[303px]' />
                       <div className="flex justify-between items-end"><p className='text-white/40 text-2xl w-full max-w-[200px]'>{trip.text}</p>
-                        <button onClick={() => Setshow(true)} className='cursor-pointer bg-white/10 p-2 rounded-full'><img src={enter} alt="enter" className='opacity-40' /></button>
+                        <button onClick={(e) => Setshow(true)} className='cursor-pointer bg-white/10 p-2 rounded-full'><img src={enter} alt="enter" className='opacity-40' /></button>
                       </div>
                     </SwiperSlide>
                   )
@@ -540,7 +540,7 @@ const Home = () => {
 
         </div>
         <div class="w-full grid grid-rows-2 gap-y-7 overflow-hidden whitespace-nowrap relative">
-          <div class="flex  min-w-full animate-marquee gap-10">
+          <div class="flex  min-w-screen animate-marquee gap-10">
             {
               logos.slice(0, 7).map(function (logo) {
                 return (
@@ -610,7 +610,7 @@ const Home = () => {
                 Please complete the form <br /> <span className='text-white/40'>to join our  club</span>
               </h1>
             </div>
-            <ul className="grid grid-cols-2 gap-y-10">
+            <ul className="grid grid-cols-1 md:grid-cols-2 ">
               {
                 contact.map(function (cont) {
                   return (
@@ -657,13 +657,12 @@ const Home = () => {
         Array.map(function (opinion) {
           return (
             openArray &&
-            <div onClick={() => SetopenArray(false)} className="-z-[-4] fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
+            <div onClick={() => SetopenArray(false)} className="z-60 h-full fixed inset-0 w-full max-w-screen  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
               <div className="p-5 bg-gray-400 rounded-lg relative">
                 <button onClick={() => SetopenArray(false)} className='cursor-pointer absolute bg-yellow1 p-4 rounded-full right-0 border-border border top-[-50px]'><img src={close} alt="close_btn" className='w-2' /></button>
                 <iframe
-                  className='mb-3'
-                  width="580p"
-                  height="339"
+                  className='mb-3 w-[250px] h-[250px] md:w-[580px] md:h-[339px]'
+                 
                   src={opinion.iframe}>
                 </iframe>
                 <h3>{opinion.name}</h3>
@@ -672,7 +671,7 @@ const Home = () => {
           )
         })}
       {
-        openInput && <div onClick={() => setOpenInput(false)} className="-z-[-4] fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
+        openInput && <div onClick={() => setOpenInput(false)} className="z-60 w-full h-full max-w-screen  fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
           <div className="p-5 bg-white rounded-xl flex flex-col items-center text-black">
             <img src={medal} alt="" className='w-32 mb-5' />
             <h3 className='font-bold text-3xl mb-2'>Request sent successfully</h3>
@@ -681,7 +680,7 @@ const Home = () => {
           </div>
         </div>
       }
-      {show && <div onClick={() => Setshow(false)} className="-z-[-4] fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-end text-white text-2xl">
+      {show && <div onClick={() => Setshow(false)} className="z-60 h-full max-w-screen  w-full fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-end text-white text-2xl">
         <div className="relative w-[50%] flex justify-end">
           <button onClick={() => Setshow(false)} className='cursor-pointer absolute bg-[#1b1a1b] p-5 rounded-full border-border border left-15'><img src={close} alt="" /></button>
           <div className="inline p-6 w-[80%] h-screen backdrop-blur-none bg-[#1b1a1b]">
@@ -692,7 +691,7 @@ const Home = () => {
                     {`"Milliar club" a'zolar ${trip.name}da`}
                   </h2>
                   <div className="py-3 border-b border-white/10">
-                    <img src={trip.img} alt="trip_img" className='w-full rounded-2xl h-[374px] mb-2' />
+                    <img src={trip.img} alt="trip_img" className='w-full rounded-2xl mb-2' />
                     <p className='text-lg text-white/40'>Klub aʼzolari uchun “Milliard Tour” boʼlib oʼtdi. Bu galgi turdan koʼzlangan asosiy maqsad hordiq chiqarish va yangi gʼoyalar asosida, bir-biri bilan fikr almashish boʼldi <br /> <br />Mehmon spiker sifatida esa Аbdukarim Mirzaev tashrif buyurdi va oʼz bilimlari bilan oʼrtoqlashdi. Koʼtarinki ruhda oʼtgan sayohat taassurotlari haqida ushbu video soʼzlaydi. </p>
                   </div>
                   <div className="flex justify-between items-center">
@@ -712,8 +711,8 @@ const Home = () => {
           </div>
         </div>
       </div>}
-      {open && <div onClick={() => Setopen(false)} className="-z-[-4] fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
-        <iframe width="780p" height="439" src="https://www.youtube.com/embed/uTFursWSzVk" title="Milliard 11-soni | Biznesga 3D nazar bilan qarash | Abdukarim Mirzayev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      {open && <div onClick={() => Setopen(false)} className="z-60  h-full fixed inset-0 w-full max-w-screen  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
+        <iframe  src="https://www.youtube.com/embed/uTFursWSzVk" title="Milliard 11-soni | Biznesga 3D nazar bilan qarash | Abdukarim Mirzayev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" className="w-[300px] h-[300px] md:w-[760px] md:h-[439px]" allowfullscreen></iframe>
       </div>}
     </div>
 

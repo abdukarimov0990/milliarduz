@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className='py-5 font-Mandrope fixed w-full z-50  bg-transparent'>
+      <header className='py-5 font-Mandrope fixed w-screen z-50  bg-transparent'>
         <div className="container flex justify-between items-center">
           <div className="flex items-center gap-5">
             <Link to="/" className='border-gray-500/10 border rounded-lg text-4xl text-white bg-gradient-to-br from-first to-second backdrop-blur-xs py-3 px-5 inline-flex font-Mandrope'>M</Link>
@@ -29,7 +29,7 @@ const Header = () => {
       </header>
       {
         openMenu &&
-        <div className='fixed w-full top-0 left-0 mt-10  bg-opacity-80 flex justify-center items-center z-60'>
+        <div className='fixed w-screen top-0 left-0 mt-10  bg-opacity-80 flex justify-center items-center z-60'>
           <nav className=' w-full border-gray-500/10 border rounded-lg text-white bg-gradient-to-br from-first to-second backdrop-blur-xs py-5 px-8 flex flex-col items-center'>
             <ul className='flex flex-col gap-4 items-center text-white'>
               <li><Link to="/" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>Home</Link></li>
