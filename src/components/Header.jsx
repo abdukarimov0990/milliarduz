@@ -31,7 +31,7 @@ const Header = () => {
       {
         openMenu &&
         <div className='fixed w-screen top-[-50px] left-0 mt-10  bg-opacity-80 flex justify-center items-center z-60'>
-          <button onClick={()=> setOpenMenu(false)} className=''><img src={close} alt="close" className='absolute z-80  top-2 right-2' /></button>
+          <button onClick={()=> setOpenMenu(false)} className=''><img src={close} alt="close" className='absolute z-80  top-5 right-5' /></button>
           <nav className=' w-full border-gray-500/10 border rounded-lg text-white bg-gradient-to-br from-first to-second backdrop-blur-xs pb-5 pt-15 px-8 flex flex-col items-center'>
             <ul className='flex flex-col gap-4 items-center text-white'>
               <li><NavLink to="/" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>HOME</NavLink></li>
