@@ -142,11 +142,12 @@ const Home = () => {
             <li className='py-3 border rounded-lg border-border px-6 bg-gradient-to-br from-first to-second w-full flex flex-col gap-5 uppercase text-center md:text-left'><h3 className='text-3xl'>10+</h3> <p className='text-white/20 max-w-auto'>years <br />of experience</p></li>
           </ul>
         </div>
-      </section>      <div className="video_container relative pb-16">
-        <video src={video} muted loop autoPlay className='w-screen' >
+      </section>      
+      <div className="video_container relative pb-16">
+        <video src={video} muted loop autoPlay className='w-screen min-h-90' >
 
         </video>
-        <div className="container flex justify-between absolute top-16 left-0 right-0 " >
+        <div className="container flex justify-between absolute top-39 left-0 right-0 " >
           <h2 className='text-4xl text-white bold'>Support</h2>
           <button onClick={() => Setopen(true)} className='rounded-full pl-4 pr-3 pt-3 pb-3 cursor-pointer bg-white'><img src={play} alt="play button" /></button>
         </div>
@@ -233,7 +234,7 @@ const Home = () => {
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
                 className="mySwiper"
               >
-                <SwiperSlide className='text-center '><img src={img1} alt="img1" className='rounded-lg h-[350px] w-full' /></SwiperSlide>
+                <SwiperSlide className='text-center '><img src={img1} alt="img1" className='rounded-lg h-[350px]' /></SwiperSlide>
                 <SwiperSlide className='text-center'><img src={img2} alt="img2" className='rounded-lg h-[350px]' /></SwiperSlide>
                 <SwiperSlide className='text-center'><img src={img3} alt="img3" className='rounded-lg h-[350px]' /></SwiperSlide>
                 <SwiperSlide className='text-center'><img src={img4} alt="img4" className='rounded-lg h-[350px]' /></SwiperSlide>
@@ -265,7 +266,7 @@ const Home = () => {
               What You Get with <span className='text-white/40'>the 'milliard club'</span>
             </h1>
           </div>
-          <ul className='grid grid-cols-1 md:grid-cols-1 gap-x-5 gap-y-12 '>
+          <ul className='grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-12 '>
             <li className='p-6 border border-border rounded-lg relative bg-gradient-to-br from-first to-second w-full'>
               <img src={smile} alt="icon" className='w-20 absolute top-[-40px] ' />
               <h2 className='mt-6 mb-4 text-2xl'>Innovative Insights</h2>
@@ -313,7 +314,7 @@ const Home = () => {
             </h1>
 
           </div>
-          <ul className='flex flex-wrap flex-col md:flex-row gap-x-12 gap-y-7'>
+          <ul className='flex flex-wrap gap-x-12 gap-y-7'>
             <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
@@ -479,7 +480,7 @@ const Home = () => {
                 },
               }}
               modules={[]}
-              className="mySwiper "
+              className="mySwiper max-w-screen "
             >
               {
                 trips.map(function (trip) {
@@ -539,30 +540,17 @@ const Home = () => {
           </div>
 
         </div>
-        <div class="w-full grid grid-rows-2 gap-y-7 overflow-hidden whitespace-nowrap relative">
-          <div class="flex  min-w-screen animate-marquee gap-10">
+        <ul className="grid grid-cols-1 mx-auto max-w-[1220px] md:grid-cols-7 md:max-w-full gap-6 w-full ">
             {
-              logos.slice(0, 7).map(function (logo) {
-                return (
-                  <span className='py-5 px-20 flex items-center bg-gradient-to-br from-first to-second border border-border'>
-                    <img src={logo.img} alt="logo_img" className='w-24 ' />
-                  </span>
+              logos.map(function (logo){
+                return(
+                  <li className="p-5 bg-second border-border border-2 flex items-center justify-center">
+                    <img src={logo.img} alt="" className="h-30 w-60 " />
+                  </li>
                 )
               })
             }
-          </div>
-          <div class="flex  min-w-full animate-marquee2 gap-10">
-            {
-              logos.slice(7, 14).map(function (logo) {
-                return (
-                  <span className='py-5 px-20 flex items-center bg-gradient-to-br from-first to-second border border-border'>
-                    <img src={logo.img} alt="logo_img" className='w-24' />
-                  </span>
-                )
-              })
-            }
-          </div>
-        </div>
+        </ul>
       </section>
       {/* FAQ  */}
       <section className='py-16 text-white'>
@@ -579,8 +567,8 @@ const Home = () => {
               {faqData.map(({ id, question, answer }) => (
                 <div className={`w-full flex flex-col items-start p-8 border-border border rounded-2xl bg-gradient-to-br from-first to-second `}>
                   <div className="flex justify-between w-full">
-                    <span className="text-xl">{question}</span>
-                    <button onClick={() => toggleFAQ(id)} className='w-10 h-10  cursor-pointer rounded-full  bg-white/10'><img src={plus} className={`transition-transform ${openId == id ? "rotate-45" : ""}`} /></button>
+                    <span className="text-base md:text-xl">{question}</span>
+                    <button onClick={() => toggleFAQ(id)} className=' w-10 h-10 flex items-center justify-center  cursor-pointer rounded-full  bg-white/10'><img src={plus} className={`transition-transform ${openId == id ? "rotate-45" : ""}`} /></button>
                   </div>
                   <AnimatePresence>
                     {openId === id && (
@@ -602,16 +590,16 @@ const Home = () => {
       </section>
       {/* contact  */}
       <section className='py-16 text-white'>
-        <div className="w-full max-w-[1220px] flex flex-col md:flex-row gap-10 mx-auto p-8 bg-gradient-to-br from-first to-second border border-border rounded-xl">
-          <div className=" min-w-[650px]">
+        <div className=" container flex flex-col md:flex-row gap-10 mx-auto p-8 bg-gradient-to-br from-first to-second border border-border rounded-xl">
+          <div className="w-full max-w-[650px]">
             <div className="mb-10">
               <button className='border mb-3 border-black bg-gradient-to-br from-first to-second py-1 px-5 uppercase text-white/40 rounded-lg'>CONTACT</button>
-              <h1 className='uppercase text-white text-4xl'>
+              <h1 className='uppercase text-white text-3xl'>
                 Please complete the form <br /> <span className='text-white/40'>to join our  club</span>
               </h1>
             </div>
-            <ul className="grid grid-cols-1 md:grid-cols-2 ">
-              {
+            <ul className="grid grid-cols-1 gap-y-10 md:grid-cols-2 ">
+              { 
                 contact.map(function (cont) {
                   return (
                     <li className='flex w-full gap-5 items-center '>
@@ -657,7 +645,7 @@ const Home = () => {
         Array.map(function (opinion) {
           return (
             openArray &&
-            <div onClick={() => SetopenArray(false)} className="z-60 h-full fixed inset-0 w-full max-w-screen  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
+            <div onClick={() => SetopenArray(false)} className="z-60 h-screen fixed inset-0 w-full max-w-screen  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
               <div className="p-5 bg-gray-400 rounded-lg relative">
                 <button onClick={() => SetopenArray(false)} className='cursor-pointer absolute bg-yellow1 p-4 rounded-full right-0 border-border border top-[-50px]'><img src={close} alt="close_btn" className='w-2' /></button>
                 <iframe
@@ -671,7 +659,7 @@ const Home = () => {
           )
         })}
       {
-        openInput && <div onClick={() => setOpenInput(false)} className="z-60 w-full h-full max-w-screen  fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
+        openInput && <div onClick={() => setOpenInput(false)} className="z-60 w-full h-screen max-w-screen  fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
           <div className="p-5 bg-white rounded-xl flex flex-col items-center text-black">
             <img src={medal} alt="" className='w-32 mb-5' />
             <h3 className='font-bold text-3xl mb-2'>Request sent successfully</h3>
@@ -680,8 +668,8 @@ const Home = () => {
           </div>
         </div>
       }
-      {show && <div onClick={() => Setshow(false)} className="z-60 h-full max-w-screen  w-full fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-end text-white text-2xl">
-        <div className="relative w-[50%] flex justify-end">
+      {show && <div onClick={() => Setshow(false)} className="z-60 h-screen max-w-screen  w-full fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-end text-white text-2xl">
+        <div className="relative w-[90%] right-0 left-0 md:w-[40%] flex justify-end">
           <button onClick={() => Setshow(false)} className='cursor-pointer absolute bg-[#1b1a1b] p-5 rounded-full border-border border left-15'><img src={close} alt="" /></button>
           <div className="inline p-6 w-[80%] h-screen backdrop-blur-none bg-[#1b1a1b]">
             {trips.slice(0, 1).map(function (trip) {
@@ -695,7 +683,7 @@ const Home = () => {
                     <p className='text-lg text-white/40'>Klub aʼzolari uchun “Milliard Tour” boʼlib oʼtdi. Bu galgi turdan koʼzlangan asosiy maqsad hordiq chiqarish va yangi gʼoyalar asosida, bir-biri bilan fikr almashish boʼldi <br /> <br />Mehmon spiker sifatida esa Аbdukarim Mirzaev tashrif buyurdi va oʼz bilimlari bilan oʼrtoqlashdi. Koʼtarinki ruhda oʼtgan sayohat taassurotlari haqida ushbu video soʼzlaydi. </p>
                   </div>
                   <div className="flex justify-between items-center">
-                    <h3 className='text-lg text-white/40'>Bizni ijtimoiy tarmoqlarda <br /> kuzatib boring →</h3>
+                    <h3 className='text-base text-white/40 max-w-[190px]'>Bizni ijtimoiy tarmoqlarda kuzatib boring →</h3>
                     <ul className='flex gap-4'>
                       <li><a href="https://www.instagram.com/milliard_club_uz/" className='p-3 bg-gradient-to-br from-first to-second inline-flex rounded-lg'><img src={instagram} alt="instagram" /></a></li>
                       <li><a href="https://t.me/AlisherIsaev_blogi" className='p-3 bg-gradient-to-br from-first to-second inline-flex rounded-lg'><img src={telegram} alt="telegram" /></a></li>
@@ -711,7 +699,7 @@ const Home = () => {
           </div>
         </div>
       </div>}
-      {open && <div onClick={() => Setopen(false)} className="z-60  h-full fixed inset-0 w-full max-w-screen  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
+      {open && <div onClick={() => Setopen(false)} className="z-60  h-screen fixed inset-0 w-full max-w-screen  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
         <iframe  src="https://www.youtube.com/embed/uTFursWSzVk" title="Milliard 11-soni | Biznesga 3D nazar bilan qarash | Abdukarim Mirzayev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" className="w-[300px] h-[300px] md:w-[760px] md:h-[439px]" allowfullscreen></iframe>
       </div>}
     </div>

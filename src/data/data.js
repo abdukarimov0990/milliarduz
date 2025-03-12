@@ -235,7 +235,7 @@ export const faqData = [
   },
   {
     id: 4,
-    question: "How often does the club host events and meetings? ",
+    question: "How club host events and meetings? ",
     answer: "Our club hosts regular events, meetings, and workshops throughout the year. These events cover a range of topics related to business, entrepreneurship, innovation, and leadership. Members can stay updated on upcoming events through our website and email newsletters.",
   },
 ];

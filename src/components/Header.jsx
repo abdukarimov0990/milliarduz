@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import hamburger from "../img/hamburger.png";
 import { NavLink, Link } from 'react-router';
+import close from "../img/close.png";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -29,10 +30,11 @@ const Header = () => {
       </header>
       {
         openMenu &&
-        <div className='fixed w-screen top-0 left-0 mt-10  bg-opacity-80 flex justify-center items-center z-60'>
-          <nav className=' w-full border-gray-500/10 border rounded-lg text-white bg-gradient-to-br from-first to-second backdrop-blur-xs py-5 px-8 flex flex-col items-center'>
+        <div className='fixed w-screen top-[-50px] left-0 mt-10  bg-opacity-80 flex justify-center items-center z-60'>
+          <button onClick={()=> setOpenMenu(false)} className=''><img src={close} alt="close" className='absolute z-80  top-2 right-2' /></button>
+          <nav className=' w-full border-gray-500/10 border rounded-lg text-white bg-gradient-to-br from-first to-second backdrop-blur-xs pb-5 pt-15 px-8 flex flex-col items-center'>
             <ul className='flex flex-col gap-4 items-center text-white'>
-              <li><Link to="/" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>Home</Link></li>
+              <li><NavLink to="/" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>HOME</NavLink></li>
               <li><NavLink to="/cases" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>CASES</NavLink></li>
               <li><NavLink to="/about" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>ABOUT TEAM</NavLink></li>
               <li><NavLink to="/contact" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>CONTACT</NavLink></li>

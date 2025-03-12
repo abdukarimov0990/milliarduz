@@ -15,7 +15,7 @@
     --color-button: rgba(255, 255, 255, 0.15);
 }
 .container{
-    @apply w-full mx-auto px-5 max-w-[1220px]
+    @apply w-full max-w-[1220px] mx-auto px-5
 }
 ul a.active{
     @apply opacity-100

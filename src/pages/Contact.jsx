@@ -40,7 +40,7 @@ const Contact = () => {
     <div className='text-white font-Mandrope'>
       <section className='py-16 text-white'>
         <div className="container">
-        <div className=" min-w-[650px]">
+        <div className="w-full max-w-[650px]">
           <div className="mb-10">
             <button className='border mb-3 border-black bg-gradient-to-br from-first to-second py-1 px-5 uppercase text-white/40 rounded-lg'>CONTACT</button>
             <h1 className='uppercase text-white text-4xl'>
