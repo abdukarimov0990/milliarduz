@@ -4,13 +4,11 @@ import instagram from "../img/instagram.png"
 import facebook from "../img/facebook.png"
 import telegram from "../img/telegram.png"
 import youtube from "../img/youtube.png"
-
-
 const Footer = () => {
   return (
     <footer className='font-Mandrope w-full max-w-[1320px] mx-auto bg-gradient-to-br from-first to-second py-5 rounded-xl'>
       <div className="container ">
-      <div className="flex flex-col md:flex-row  justify-between items-star text-startt md:text-center  md:items-center gap-y-5 md:gap-0">
+        <div className="flex flex-col md:flex-row  justify-between items-star text-startt md:text-center  md:items-center gap-y-5 md:gap-0">
           <Link to="/" className=' border-gray-500/10 border rounded-lg text-4xl text-yellow-600 bg-gradient-to-br from-first to-second  py-3 px-5 max-w-17 font-Mandrope'>M</Link>
           <nav>
             <ul className='flex gap-5 text-white items-center'>

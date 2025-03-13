@@ -40,7 +40,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
 const Home = () => {
   // variables
   const [open, Setopen] = useState(false);
@@ -55,21 +54,6 @@ const Home = () => {
   const progressContent = useRef(null);
   const [openId, setOpenId] = useState(null);
   const isFormValid = textValue.trim() !== "" && numberValue.trim() !== "" && selectValue !== "DEFAULT";
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1080);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1080);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // functions 
-  const openModal = (el) => {
-    Setshow(true)
-  }
   const toggleFAQ = (id) => {
     setOpenId(openId === id ? null : id);
   };
@@ -85,7 +69,6 @@ const Home = () => {
   };
   // push to sheets
   const [message, setMessage] = useState("");
-
   const [formData, setFormData] = useState({});
   const handleChange = (e) => {
     setFormData({
@@ -97,7 +80,6 @@ const Home = () => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-
     try {
       const response = await fetch(form.action, {
         method: "POST",
@@ -105,20 +87,18 @@ const Home = () => {
       });
 
       if (response.ok) {
-        alert("Form successfully submitted!");
+        setOpenInput(true);
         setTextValue("");
         setNumberValue("");
         setSelectValue("DEFAULT");
         setMessage("");
       } else {
-        alert("Failed to submit the form.");
+        alert("Nmadur xato ketdi");
       }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("Xato shundan iborat", error);
     }
   };
-
-
   return (
     <div className='font-Mondrope flex flex-col'>
       {/* hero */}
@@ -145,7 +125,6 @@ const Home = () => {
       </section>      
       <div className="video_container relative pb-16">
         <video src={video} muted loop autoPlay className='w-screen min-h-90' >
-
         </video>
         <div className="container flex justify-between absolute top-39 left-0 right-0 " >
           <h2 className='text-4xl text-white bold'>Support</h2>
@@ -176,13 +155,13 @@ const Home = () => {
               <img src={founders} alt="founders" className='mb-12' />
               <img src={img} alt="founders_img" className='w-20' />
             </li>
-            <li className='inline-flex flex-col hover:p-2 transition-all ease-in-out'>
+            <li className='inline-flex flex-col hover:scale-90 transition-all ease-in-out'>
               <Link className='rounded-lg p-4 bg-gradient-to-br from-first to-second border border-border text-xl'>
                 <h2 className='mb-6'>Read about <span className='text-white/40'>Alisher isayev</span></h2>
                 <div className="flex justify-between"><h3 className='text-white/40'>Founder of the "Milliard club"</h3><button className='bg-gradient-to-br from-border to-second/40 rounded-full text-2xl py-2 px-4 border border-border'>+</button></div>
               </Link>
             </li>
-            <li className=' inline-flex flex-col hover:p-2 transition-all ease-in-out'>
+            <li className=' inline-flex flex-col hover:scale-90 transition-all ease-in-out'>
               <Link className='rounded-lg p-4 bg-gradient-to-br from-first to-second border border-border text-xl'>
                 <h2 className='mb-6'>Read about <span className='text-white/40'>Jakhongir Artikhhojayev</span></h2>
                 <div className="flex justify-between"><h3 className='text-white/40'>Founder of the "AKFA group"</h3><button className='bg-gradient-to-br from-border to-second/40 rounded-full text-2xl py-2 px-4 border border-border'>+</button></div>
@@ -239,7 +218,6 @@ const Home = () => {
                 <SwiperSlide className='text-center'><img src={img3} alt="img3" className='rounded-lg h-[350px]' /></SwiperSlide>
                 <SwiperSlide className='text-center'><img src={img4} alt="img4" className='rounded-lg h-[350px]' /></SwiperSlide>
                 <SwiperSlide className='text-center'><img src={img5} alt="img5" className='rounded-lg h-[350px]' /></SwiperSlide>
-
                 <div className="autoplay-progress hidden" slot="container-end">
                   <svg viewBox="0 0 48 48" ref={progressCircle}>
                     <circle cx="24" cy="24" r="20"></circle>
@@ -294,25 +272,22 @@ const Home = () => {
             </li>
             <li className='p-6 border border-border rounded-lg relative bg-gradient-to-br from-first to-second w-full'>
               <h2 className=' mb-4 text-2xl'>Interested in joining the club? Provide your information by clicking below </h2>
-              <a href='#' className='inline-flex w-full py-3 px-4 rounded-lg bg-gradient-to-br from-yellow1 to-yellow2  border-yellowBorder justify-center uppercase hover:opacity-40 transition-all ease-in-out cursor-pointer'>
+              <a href='#1' className='inline-flex w-full py-3 px-4 rounded-lg bg-gradient-to-br from-yellow1 to-yellow2  border-yellowBorder justify-center uppercase hover:opacity-40 transition-all ease-in-out cursor-pointer'>
                 join the club
               </a>
             </li>
           </ul>
           <hr className='text-white/10 mt-16' />
-
         </div>
       </section>
       {/* Members  */}
       <section className='py-16 text-white'>
         <div className=" w-full max-w-[1220px] mx-auto  bg-gradient-to-br from-first tt-second border-border border rounded-xl p-10">
-
           <div className="mb-10">
             <button className='border mb-3 border-border bg-gradient-to-br from-first to-second py-1 px-5 uppercase text-white/40 rounded-lg'>BUSINESS TYPES</button>
             <h1 className='uppercase text-white text-5xl'>
               We have members <br /> <span className='text-white/40'> in these business spheres</span>
             </h1>
-
           </div>
           <ul className='flex flex-wrap gap-x-12 gap-y-7'>
             <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
@@ -341,7 +316,6 @@ const Home = () => {
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'> Retail and Wholesale
-
               </h3>
             </li>
             <li>
@@ -416,10 +390,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>17%</h3>
               </div>
             </li>
-
           </ul>
-
-
         </div>
         <hr className=' max-w-[1220px] w-full text-white/10 mt-16 mx-auto' />
       </section>
@@ -523,7 +494,6 @@ const Home = () => {
                     <p className='text-white/40'>Lorem ipsum dolor sit amet consectetur.</p>
                   </div>
                 </li>
-
               )
             })}
           </ul>
@@ -572,7 +542,6 @@ const Home = () => {
                   </div>
                   <AnimatePresence>
                     {openId === id && (
-
                       <motion.p
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
@@ -589,7 +558,7 @@ const Home = () => {
         </div>
       </section>
       {/* contact  */}
-      <section className='py-16 text-white'>
+      <section className='py-16 text-white' id="1">
         <div className=" container flex flex-col md:flex-row gap-10 mx-auto p-8 bg-gradient-to-br from-first to-second border border-border rounded-xl">
           <div className="w-full max-w-[650px]">
             <div className="mb-10">
@@ -635,7 +604,7 @@ const Home = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 className='p-3 h-25 bg-input/10 border-white/10 border rounded-lg outline-0 focus:border-yellow1 focus:border-2 w-full'
               ></textarea>
-              <input type="submit" value="SEND" disabled={!isFormValid} className={`p-3 bg-white text-black text-center rounded-lg text-xl ${!isFormValid ? "opacity-40" : ""}`} />
+              <input type="submit" value="SEND" disabled={!isFormValid} onClick={()=> setOpenInput(true)} className={`p-3 bg-white text-black text-center rounded-lg text-xl ${!isFormValid ? "opacity-40" : ""}`} />
             </form>
           </div>
         </div>
@@ -650,7 +619,6 @@ const Home = () => {
                 <button onClick={() => SetopenArray(false)} className='cursor-pointer absolute bg-yellow1 p-4 rounded-full right-0 border-border border top-[-50px]'><img src={close} alt="close_btn" className='w-2' /></button>
                 <iframe
                   className='mb-3 w-[250px] h-[250px] md:w-[580px] md:h-[339px]'
-                 
                   src={opinion.iframe}>
                 </iframe>
                 <h3>{opinion.name}</h3>

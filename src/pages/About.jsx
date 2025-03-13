@@ -23,7 +23,6 @@ import plus from "../img/plus.png";
 import { AnimatePresence, motion } from "framer-motion";
 import call from "../img/call.png"
 import medal from "../img/medal.avif"
-
 const About = () => {
   const [Array, SetArray] = useState([]);
   const [openId, setOpenId] = useState(null);
@@ -33,7 +32,6 @@ const About = () => {
   const isFormValid = textValue.trim() !== "" && numberValue.trim() !== "" && selectValue !== "DEFAULT";
   const [openArray, SetopenArray] = useState(false);
   const [openInput, setOpenInput] = useState(false);
-
   const [formData, setFormData] = useState({});
   const openModal = (el) => {
     Setshow(true)
@@ -46,9 +44,7 @@ const About = () => {
     const filteredArray = opinions.filter((op) => op.name == el.name)
     SetArray(filteredArray)
   }
-
-  const [message, setMessage] = useState("");
-  
+ const [message, setMessage] = useState("");
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -59,7 +55,6 @@ const About = () => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-  
     try {
       const response = await fetch(form.action, {
         method: "POST",
@@ -79,7 +74,6 @@ const About = () => {
       console.error("Submission error:", error);
     }
   };
-
   const [open, Setopen] = useState(false);
   const [openPhoto, SetopenPhoto] = useState(false);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -87,8 +81,6 @@ const About = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
 
   };
-
-
   return (
     <div className="text-white font-Mandrope">
       {/* home  */}
@@ -120,7 +112,6 @@ const About = () => {
               <p className='text-white/40 mb-5'>Milliard club is the first international business club in Uzbekistan, which will be officially launched in December 2020. The club includes strong businessmen, entrepreneurs and experts who have achieved success in various fields.</p>
               <button className='cursor-pointer text-white/40 uppercase text-end'>read more</button>
             </div>
-
             <div className='p-7 bg-second border border-border rounded-lg row-span-4'>
               <h3 className='text-3xl mb-2'>Trip to countries</h3>
               <p className='text-white/40 text-lg mb-3'>The main goal is to exchange ideas, innovate based on new concepts and have fun</p>
@@ -156,7 +147,6 @@ const About = () => {
               <h3 className='font-bold'>Alisher Isayev's 1-month business treatment course</h3>
               <span className='p-2 bg-white/10 rounded-full'><img src={web} alt="web" className='w-8 opacity-40' /></span>
             </div>
-
             <div className='p-7 bg-second border-border row-span-3 rounded-lg'>
               <h2 className='text-2xl mb-2'>Expirience networking</h2>
               <p className='text-white/40 text-base mb-5'>Our club hosts Uzbekistan's top entrepreneurs, facilitating valuable networking and knowledge-sharing opportunities.</p>
@@ -177,6 +167,7 @@ const About = () => {
         </div>
       </section>
       <hr className='text-white/10 mt-16 container' />
+      {/* photos  */}
       <section className='py-16'>
         <div className="container">
           <div className="mb-10">
@@ -185,11 +176,10 @@ const About = () => {
               photos from <br /><span className='text-white/40'>the meetings</span>
             </h1>
           </div>
-
         </div>
         <div className="w-full max-w-screen mx-auto ">
           <ul className='flex flex-col gap-5 text-center mx-auto'>
-            <ul className='flex flex-col md:flex-row gap-5 justify-center md:justify-end'>
+            <ul className='flex flex-col md:flex-row  gap-5 justify-center md:justify-end'>
               {photos.slice(0, 4).map(function (photo) {
                 return (
                   <li onClick={() => SetopenPhoto(true)} className='mx-auto md:mx-0 md:w-auto relative cursor-pointer'>
@@ -218,8 +208,8 @@ const About = () => {
           </ul>
         </div>
         <hr className='text-white/10 mt-16 container' />
-
       </section>
+      {/* team members  */}
       <section className='py-16'>
         <div className="container">
           <div className="mb-10">
@@ -286,12 +276,12 @@ const About = () => {
           </div>
 
         </div>
-        <ul className="grid grid-cols-1 mx-auto max-w-[1220px] md:grid-cols-7 md:max-w-full gap-6 w-full ">
+        <ul className="grid grid-cols-1 mx-auto max-w-[1220px] md:grid-cols-7 md:max-w-full gap-3 w-full ">
             {
               logos.map(function (logo){
                 return(
                   <li className="p-5 bg-second border-border border-2 flex items-center justify-center">
-                    <img src={logo.img} alt="" className="h-30 w-60 " />
+                    <img src={logo.img} alt="" className="h-25 w-60 " />
                   </li>
                 )
               })
@@ -380,6 +370,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      {/* Overlays */}
       {
         openPhoto && <div onClick={() => SetopenPhoto(false)} className="z-60  h-screen fixed inset-0  w-full max-w-screen bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
           <div className="p-5 bg-gray-500 rounded-xl relative">

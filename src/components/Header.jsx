@@ -5,7 +5,6 @@ import close from "../img/close.png";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
-
   return (
     <div>
       <header className='py-5 font-Mandrope fixed w-screen z-50  bg-transparent'>

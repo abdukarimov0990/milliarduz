@@ -1,7 +1,4 @@
 @import "tailwindcss";
-
-
-
 @theme {
     --font-Mandrope: "Manrope", sans-serif; 
     --color-first: rgba(38,38,40,0.14);
@@ -47,7 +44,6 @@ ul a.active{
       .no-spinner {
         -moz-appearance: textfield;
       }
-    
 }
 ::selection {
     background-color: #b47d17;

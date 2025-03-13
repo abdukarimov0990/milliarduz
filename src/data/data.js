@@ -49,7 +49,6 @@ import facebook from "../img/facebook.png";
 import telegram from "../img/telegram.png";
 import youtube from "../img/youtube.png";
 import call from "../img/call.png";
-
  export const member = [
   {
     name: "Murad Nazarov",
@@ -82,7 +81,6 @@ import call from "../img/call.png";
     img: komil,
   },
 ];
-
 export const trips = [
   {
     id: 0,
@@ -127,7 +125,6 @@ export const trips = [
     text: "Our trip to insodesia",
   },
 ]
-
 export const opinions = [
   {
     name:"Shuhrat Ergashev",
@@ -198,7 +195,6 @@ export const logos = [
     img: logo14,
   },
 ]
-
 export const contact = [
   {
     name: "Email",
@@ -308,7 +304,6 @@ export const photos = [
   {
     img: gridImg8,
   },
-  
 ]
 export const team = [
   {
