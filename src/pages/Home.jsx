@@ -288,7 +288,7 @@ const Home = () => {
         <div className=" w-full max-w-[1220px] mx-auto  bg-gradient-to-br from-first tt-second border-border border rounded-xl p-10">
           <div className="mb-10">
             <button className='border mb-3 border-border bg-gradient-to-br from-first to-second py-1 px-5 uppercase text-white/40 rounded-lg'>BUSINESS TYPES</button>
-            <h1 className='uppercase text-white text-5xl'>
+            <h1 className='uppercase text-white text-3xl md:text-5xl'>
               We have members <br /> <span className='text-white/40'> in these business spheres</span>
             </h1>
           </div>
