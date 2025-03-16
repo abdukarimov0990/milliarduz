@@ -123,15 +123,18 @@ const Home = () => {
           </ul>
         </div>
       </section>      
-      <div className="video_container relative pb-16">
-        <video src={video} muted loop autoPlay className='w-screen min-h-90' >
+      <section className="pb-16">
+      <div className="video_container w-full relative">
+        <video src={video}  muted loop autoPlay className='w-full' >
         </video>
-        <div className="container flex justify-between absolute top-39 left-0 right-0 " >
+        <div className="container flex justify-between items-center absolute top-0 bottom-0 left-0 right-0 " >
           <h2 className='text-4xl text-white bold'>Support</h2>
           <button onClick={() => Setopen(true)} className='rounded-full pl-4 pr-3 pt-3 pb-3 cursor-pointer bg-white'><img src={play} alt="play button" /></button>
         </div>
-        <hr className='text-white/10 mt-16 container' />
       </div>
+      <hr className='text-white/10 mt-16' />
+
+      </section>
       {/* Get know with */}
       <section className='py-16'>
         <div className="container">
@@ -158,13 +161,13 @@ const Home = () => {
             <li className='inline-flex flex-col hover:scale-90 transition-all ease-in-out'>
               <Link className='rounded-lg p-4 bg-gradient-to-br from-first to-second border border-border text-xl'>
                 <h2 className='mb-6'>Read about <span className='text-white/40'>Alisher isayev</span></h2>
-                <div className="flex justify-between"><h3 className='text-white/40'>Founder of the "Milliard club"</h3><button className='bg-gradient-to-br from-border to-second/40 rounded-full text-2xl py-2 px-4 border border-border'>+</button></div>
+                <div className="flex justify-between"><h3 className='text-white/40'>Founder of the "Milliard club"</h3></div>
               </Link>
             </li>
             <li className=' inline-flex flex-col hover:scale-90 transition-all ease-in-out'>
               <Link className='rounded-lg p-4 bg-gradient-to-br from-first to-second border border-border text-xl'>
                 <h2 className='mb-6'>Read about <span className='text-white/40'>Jakhongir Artikhhojayev</span></h2>
-                <div className="flex justify-between"><h3 className='text-white/40'>Founder of the "AKFA group"</h3><button className='bg-gradient-to-br from-border to-second/40 rounded-full text-2xl py-2 px-4 border border-border'>+</button></div>
+                <div className="flex justify-between"><h3 className='text-white/40'>Founder of the "AKFA group"</h3></div>
               </Link>
             </li>
             <li className='p-7 bg-gradient-to-br from-first to-second border border-border rounded-lg row-span-3'>
@@ -289,8 +292,8 @@ const Home = () => {
               We have members <br /> <span className='text-white/40'> in these business spheres</span>
             </h1>
           </div>
-          <ul className='flex flex-wrap gap-x-12 gap-y-7'>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
+          <ul className='grid grid-cols-2 flex-wrap-reverse md:flex gap-x-12 gap-y-7'>
+            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'>Manufacturing</h3>
@@ -301,7 +304,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>17%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
+            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'>Logistics</h3>
@@ -312,7 +315,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>15%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
+            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'> Retail and Wholesale
@@ -324,7 +327,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>18%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
+            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'>Pharmaceuticals and Medical</h3>
@@ -335,7 +338,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>17%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
+            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'>Services</h3>
@@ -346,7 +349,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>10%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
+            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'> Technology and IT</h3>
@@ -357,7 +360,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>10%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
+            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'>Construction</h3>
@@ -368,7 +371,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>10%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
+            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'>Food Production and Distribution</h3>
@@ -379,7 +382,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>5%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6'>
+            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
               <img src={basket} alt="basket" className='w-8 opacity-40' />
               <span className='w-[1px] h-full bg-white/10'></span>
               <h3 className='text-xl text-white/40'>Others</h3>

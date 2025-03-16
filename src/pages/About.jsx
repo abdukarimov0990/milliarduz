@@ -85,7 +85,7 @@ const About = () => {
     <div className="text-white font-Mandrope">
       {/* home  */}
       <section className={`text-center py-64 mt-[-200px]  bg-no-repeat bg-center bg-cover h-screen`} style={{ backgroundImage: `url(${bg})` }}>
-        <div className="absolute inset-0 bg-black/70 h-screen"></div>
+        <div className="absolute inset-0 bg-black/70 h-[103vh]"></div>
         <div className="container">
           <div className="w-full max-w-[500px] relative z-10 ">
             <h1 className='text-white uppercase text-5xl leading-15 mb-4'>

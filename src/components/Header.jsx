@@ -20,7 +20,7 @@ const Header = () => {
             </nav>
           </div>
           <div className="hidden md:inline-flex">
-            <Link to="/contact" className='py-5 px-8 bg-gradient-to-br from-yellow1 to-yellow2 rounded-lg border border-yellowBorder text-white'>BECOME A MEMBER</Link>
+            <Link to="/contact" className='py-5 px-8 bg-gradient-to-br from-yellow1 to-yellow2 hover:from-yellow2 hover:to-yellow1 ease-in-out duration-500 rounded-lg border border-yellowBorder text-white'>BECOME A MEMBER</Link>
           </div>
           <div onClick={() => setOpenMenu(!openMenu)} className="p-5 md:hidden bg-gradient-to-br from-first to-second rounded-lg border border-border cursor-pointer">
             <img src={hamburger} alt="hamburger" />
@@ -29,9 +29,9 @@ const Header = () => {
       </header>
       {
         openMenu &&
-        <div className='fixed w-screen top-[-50px] left-0 mt-10  bg-opacity-80 flex justify-center items-center z-60'>
+        <div className='fixed w-screen h-full top-[-40px] bg-gradient-to-br from-first to-second backdrop-blur-xs  border-gray-500/10 border rounded-lg left-0 mt-10  bg-opacity-80 flex justify-center items-start z-60'>
           <button onClick={()=> setOpenMenu(false)} className=''><img src={close} alt="close" className='absolute z-80  top-5 right-5' /></button>
-          <nav className=' w-full border-gray-500/10 border rounded-lg text-white bg-gradient-to-br from-first to-second backdrop-blur-xs pb-5 pt-15 px-8 flex flex-col items-center'>
+          <nav className=' w-full text-white  pb-5 pt-15 px-8 flex flex-col items-center'>
             <ul className='flex flex-col gap-4 items-center text-white'>
               <li><NavLink to="/" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>HOME</NavLink></li>
               <li><NavLink to="/cases" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>CASES</NavLink></li>
