@@ -29,7 +29,7 @@ const Header = () => {
       </header>
       {
         openMenu &&
-        <div className='fixed w-screen h-full top-[-40px] bg-gradient-to-br from-first to-second backdrop-blur-xs  border-gray-500/10 border rounded-lg left-0 mt-10  bg-opacity-80 flex justify-center items-start z-60'>
+        <div className='fixed w-screen h-full top-[-40px] bg-black/90 backdrop-blur-xs  border-gray-500/10 border rounded-lg left-0 mt-10  bg-opacity-80 flex justify-center items-start z-60'>
           <button onClick={()=> setOpenMenu(false)} className=''><img src={close} alt="close" className='absolute z-80  top-5 right-5' /></button>
           <nav className=' w-full text-white  pb-5 pt-15 px-8 flex flex-col items-center'>
             <ul className='flex flex-col gap-4 items-center text-white'>
