@@ -122,17 +122,17 @@ const Home = () => {
             <li className='py-3 border rounded-lg border-border px-6 bg-gradient-to-br from-first to-second w-full flex flex-col gap-5 uppercase text-center md:text-left'><h3 className='text-3xl'>10+</h3> <p className='text-white/20 max-w-auto'>years <br />of experience</p></li>
           </ul>
         </div>
-      </section>      
+      </section>
       <section className="pb-16">
-      <div className="video_container w-full relative">
-        <video src={video}  muted loop autoPlay className='w-full' >
-        </video>
-        <div className="container flex justify-between items-center absolute top-0 bottom-0 left-0 right-0 " >
-          <h2 className='text-4xl text-white bold'>Support</h2>
-          <button onClick={() => Setopen(true)} className='rounded-full pl-4 pr-3 pt-3 pb-3 cursor-pointer bg-white'><img src={play} alt="play button" /></button>
+        <div className="video_container w-full relative">
+          <video src={video} muted loop autoPlay className='w-full' >
+          </video>
+          <div className="container flex justify-between items-center absolute top-0 bottom-0 left-0 right-0 " >
+            <h2 className='text-4xl text-white bold'>Support</h2>
+            <button onClick={() => Setopen(true)} className='rounded-full pl-4 pr-3 pt-3 pb-3 cursor-pointer bg-white'><img src={play} alt="play button" /></button>
+          </div>
         </div>
-      </div>
-      <hr className='text-white/10 mt-16' />
+        <hr className='text-white/10 mt-16' />
 
       </section>
       {/* Get know with */}
@@ -292,108 +292,134 @@ const Home = () => {
               We have members <br /> <span className='text-white/40'> in these business spheres</span>
             </h1>
           </div>
-          <ul className='grid grid-cols-2 flex-wrap-reverse md:flex gap-x-12 gap-y-7'>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
-              <img src={basket} alt="basket" className='w-8 opacity-40' />
-              <span className='w-[1px] h-full bg-white/10'></span>
-              <h3 className='text-xl text-white/40'>Manufacturing</h3>
-            </li>
-            <li>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl">
+          <ul className='flex-wrap md:flex gap-x-12 gap-y-7'>
+            <li className='flex items-center gap-6 mb-4'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Manufacturing</h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
                 <h3 className='absolute rotate-[-19deg] '>17%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
-              <img src={basket} alt="basket" className='w-8 opacity-40' />
-              <span className='w-[1px] h-full bg-white/10'></span>
-              <h3 className='text-xl text-white/40'>Logistics</h3>
-            </li>
-            <li>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl">
+            <li className='flex flex-row-reverse w-full md:w-auto md:flex-row items-center gap-6 mb-4'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Logistics</h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
                 <h3 className='absolute rotate-[-19deg] '>15%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
-              <img src={basket} alt="basket" className='w-8 opacity-40' />
-              <span className='w-[1px] h-full bg-white/10'></span>
-              <h3 className='text-xl text-white/40'> Retail and Wholesale
-              </h3>
-            </li>
-            <li>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl">
+            <li className='flex items-center gap-6 mb-4'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Retail and </h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
                 <h3 className='absolute rotate-[-19deg] '>18%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
-              <img src={basket} alt="basket" className='w-8 opacity-40' />
-              <span className='w-[1px] h-full bg-white/10'></span>
-              <h3 className='text-xl text-white/40'>Pharmaceuticals and Medical</h3>
+          
+            <li className='flex items-center flex-row-reverse w-full md:w-auto md:flex-row gap-6 mb-4'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Services</h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
+                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
+                <h3 className='absolute rotate-[-19deg] '>10%</h3>
+              </div>
             </li>
-            <li>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl">
+            <li className='flex items-center gap-6 mb-4'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Manufacturing</h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
                 <h3 className='absolute rotate-[-19deg] '>17%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
-              <img src={basket} alt="basket" className='w-8 opacity-40' />
-              <span className='w-[1px] h-full bg-white/10'></span>
-              <h3 className='text-xl text-white/40'>Services</h3>
+            <li className='flex items-center gap-6 mb-4 flex-row-reverse w-full md:w-auto md:flex-row'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Logistics</h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
+                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
+                <h3 className='absolute rotate-[-19deg] '>15%</h3>
+              </div>
             </li>
-            <li>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl">
+            <li className='flex items-center gap-6 mb-4'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Retail and </h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
+                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
+                <h3 className='absolute rotate-[-19deg] '>18%</h3>
+              </div>
+            </li>
+          
+            <li className='flex items-center gap-6 mb-4 flex-row-reverse w-full md:w-auto md:flex-row'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Services</h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
                 <h3 className='absolute rotate-[-19deg] '>10%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
-              <img src={basket} alt="basket" className='w-8 opacity-40' />
-              <span className='w-[1px] h-full bg-white/10'></span>
-              <h3 className='text-xl text-white/40'> Technology and IT</h3>
+            <li className='flex items-center gap-6 mb-4'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Retail and </h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
+                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
+                <h3 className='absolute rotate-[-19deg] '>18%</h3>
+              </div>
             </li>
-            <li>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl">
+          
+            <li className='flex items-center gap-6 mb-4 flex-row-reverse w-full md:w-auto md:flex-row'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Services</h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
                 <h3 className='absolute rotate-[-19deg] '>10%</h3>
               </div>
             </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
-              <img src={basket} alt="basket" className='w-8 opacity-40' />
-              <span className='w-[1px] h-full bg-white/10'></span>
-              <h3 className='text-xl text-white/40'>Construction</h3>
-            </li>
-            <li>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl">
+            <li className='flex items-center gap-6 mb-4'>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40 max-w-full'>Retail and </h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
                 <h3 className='absolute rotate-[-19deg] '>10%</h3>
-              </div>
-            </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
-              <img src={basket} alt="basket" className='w-8 opacity-40' />
-              <span className='w-[1px] h-full bg-white/10'></span>
-              <h3 className='text-xl text-white/40'>Food Production and Distribution</h3>
-            </li>
-            <li>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl">
-                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
-                <h3 className='absolute rotate-[-19deg] '>5%</h3>
-              </div>
-            </li>
-            <li className='bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center gap-6 '>
-              <img src={basket} alt="basket" className='w-8 opacity-40' />
-              <span className='w-[1px] h-full bg-white/10'></span>
-              <h3 className='text-xl text-white/40'>Others</h3>
-            </li>
-            <li>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl">
-                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
-                <h3 className='absolute rotate-[-19deg] '>17%</h3>
               </div>
             </li>
           </ul>
+
+
         </div>
         <hr className=' max-w-[1220px] w-full text-white/10 mt-16 mx-auto' />
       </section>
@@ -514,15 +540,15 @@ const Home = () => {
 
         </div>
         <ul className="grid grid-cols-1 mx-auto max-w-[1220px] md:grid-cols-7 md:max-w-full gap-6 w-full ">
-            {
-              logos.map(function (logo){
-                return(
-                  <li className="p-5 bg-second border-border border-2 flex items-center justify-center">
-                    <img src={logo.img} alt="" className="h-30 w-60 " />
-                  </li>
-                )
-              })
-            }
+          {
+            logos.map(function (logo) {
+              return (
+                <li className="p-5 bg-second border-border border-2 flex items-center justify-center">
+                  <img src={logo.img} alt="" className="h-30 w-60 " />
+                </li>
+              )
+            })
+          }
         </ul>
       </section>
       {/* FAQ  */}
@@ -571,7 +597,7 @@ const Home = () => {
               </h1>
             </div>
             <ul className="grid grid-cols-1 gap-y-10 md:grid-cols-2 ">
-              { 
+              {
                 contact.map(function (cont) {
                   return (
                     <li className='flex w-full gap-5 items-center '>
@@ -607,7 +633,7 @@ const Home = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 className='p-3 h-25 bg-input/10 border-white/10 border rounded-lg outline-0 focus:border-yellow1 focus:border-2 w-full'
               ></textarea>
-              <input type="submit" value="SEND" disabled={!isFormValid} onClick={()=> setOpenInput(true)} className={`p-3 bg-white text-black text-center rounded-lg text-xl ${!isFormValid ? "opacity-40" : ""}`} />
+              <input type="submit" value="SEND" disabled={!isFormValid} onClick={() => setOpenInput(true)} className={`p-3 bg-white text-black text-center rounded-lg text-xl ${!isFormValid ? "opacity-40" : ""}`} />
             </form>
           </div>
         </div>
@@ -671,7 +697,7 @@ const Home = () => {
         </div>
       </div>}
       {open && <div onClick={() => Setopen(false)} className="z-60  h-screen fixed inset-0 w-full max-w-screen  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
-        <iframe  src="https://www.youtube.com/embed/uTFursWSzVk" title="Milliard 11-soni | Biznesga 3D nazar bilan qarash | Abdukarim Mirzayev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" className="w-[300px] h-[300px] md:w-[760px] md:h-[439px]" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/uTFursWSzVk" title="Milliard 11-soni | Biznesga 3D nazar bilan qarash | Abdukarim Mirzayev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" className="w-[300px] h-[300px] md:w-[760px] md:h-[439px]" allowfullscreen></iframe>
       </div>}
     </div>
 
