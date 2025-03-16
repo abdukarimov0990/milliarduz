@@ -292,7 +292,7 @@ const Home = () => {
               We have members <br /> <span className='text-white/40'> in these business spheres</span>
             </h1>
           </div>
-          <ul className='flex-wrap md:flex gap-x-12 gap-y-7'>
+          <ul className='flex-wrap md:flex gap-x-6 gap-y-7'>
             <li className='flex items-center gap-6 mb-4'>
               <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
                 <img src={basket} alt="basket" className='w-8 opacity-40' />
@@ -319,7 +319,7 @@ const Home = () => {
               <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
                 <img src={basket} alt="basket" className='w-8 opacity-40' />
                 <span className='w-[1px] h-full bg-white/10'></span>
-                <h3 className='text-xl text-white/40'>Retail and </h3>
+                <h3 className='text-xl text-white/40'>Retail and Whosales</h3>
               </div>
               <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
@@ -338,11 +338,11 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>10%</h3>
               </div>
             </li>
-            <li className='flex items-center gap-6 mb-4'>
+            <li className='flex items-center mb-4 gap-6'>
               <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
                 <img src={basket} alt="basket" className='w-8 opacity-40' />
                 <span className='w-[1px] h-full bg-white/10'></span>
-                <h3 className='text-xl text-white/40'>Manufacturing</h3>
+                <h3 className='text-xl text-white/40'> Technology and IT</h3>
               </div>
               <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
@@ -353,18 +353,30 @@ const Home = () => {
               <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
                 <img src={basket} alt="basket" className='w-8 opacity-40' />
                 <span className='w-[1px] h-full bg-white/10'></span>
-                <h3 className='text-xl text-white/40'>Logistics</h3>
+                <h3 className='text-xl text-white/40'>Construction</h3>
               </div>
               <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
                 <h3 className='absolute rotate-[-19deg] '>15%</h3>
               </div>
             </li>
-            <li className='flex items-center gap-6 mb-4'>
+
+            <li className='flex items-center gap-6 mb-4  '>
               <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
                 <img src={basket} alt="basket" className='w-8 opacity-40' />
                 <span className='w-[1px] h-full bg-white/10'></span>
-                <h3 className='text-xl text-white/40'>Retail and </h3>
+                <h3 className='text-xl text-white/40'>Food Production</h3>
+              </div>
+              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
+                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
+                <h3 className='absolute rotate-[-19deg] '>10%</h3>
+              </div>
+            </li>
+            <li className='flex items-center gap-6 mb-4 flex-row-reverse w-full md:w-auto md:flex-row '>
+              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
+                <img src={basket} alt="basket" className='w-8 opacity-40' />
+                <span className='w-[1px] h-full bg-white/10'></span>
+                <h3 className='text-xl text-white/40'>Pharmaceuticals and</h3>
               </div>
               <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
@@ -372,51 +384,18 @@ const Home = () => {
               </div>
             </li>
           
-            <li className='flex items-center gap-6 mb-4 flex-row-reverse w-full md:w-auto md:flex-row'>
+            <li className='flex items-center gap-6 mb-4 '>
               <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
                 <img src={basket} alt="basket" className='w-8 opacity-40' />
                 <span className='w-[1px] h-full bg-white/10'></span>
-                <h3 className='text-xl text-white/40'>Services</h3>
+                <h3 className='text-xl text-white/40'>Others</h3>
               </div>
               <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
                 <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
                 <h3 className='absolute rotate-[-19deg] '>10%</h3>
               </div>
             </li>
-            <li className='flex items-center gap-6 mb-4'>
-              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
-                <img src={basket} alt="basket" className='w-8 opacity-40' />
-                <span className='w-[1px] h-full bg-white/10'></span>
-                <h3 className='text-xl text-white/40'>Retail and </h3>
-              </div>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
-                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
-                <h3 className='absolute rotate-[-19deg] '>18%</h3>
-              </div>
-            </li>
-          
-            <li className='flex items-center gap-6 mb-4 flex-row-reverse w-full md:w-auto md:flex-row'>
-              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
-                <img src={basket} alt="basket" className='w-8 opacity-40' />
-                <span className='w-[1px] h-full bg-white/10'></span>
-                <h3 className='text-xl text-white/40'>Services</h3>
-              </div>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
-                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
-                <h3 className='absolute rotate-[-19deg] '>10%</h3>
-              </div>
-            </li>
-            <li className='flex items-center gap-6 mb-4'>
-              <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
-                <img src={basket} alt="basket" className='w-8 opacity-40' />
-                <span className='w-[1px] h-full bg-white/10'></span>
-                <h3 className='text-xl text-white/40 max-w-full'>Retail and </h3>
-              </div>
-              <div className="relative rounded-lg flex items-center justify-center w-15 h-15 bg-yellow1 rotate-20 text-white font-bold text-xl ml-auto">
-                <div className="rounded-lg absolute top-0 left-0 w-15 h-15 bg-yellow1 rotate-[135deg]"></div>
-                <h3 className='absolute rotate-[-19deg] '>10%</h3>
-              </div>
-            </li>
+
           </ul>
 
 
