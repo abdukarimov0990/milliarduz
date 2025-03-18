@@ -412,6 +412,16 @@ const About = () => {
             </div>
           )
         })}
+           {
+        openInput && <div onClick={() => setOpenInput(false)} className="-z-[-4] fixed inset-0  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
+          <div className="p-5 bg-white rounded-xl flex flex-col items-center text-black">
+            <img src={medal} alt="" className='w-32 mb-5' />
+            <h3 className='font-bold text-3xl mb-2'>Request sent successfully</h3>
+            <p className=' opacity-40 text-base max-w-[328px] text-center mb-6'>Your request has been successfully sent and we will contact you shortly</p>
+            <Link to="/about" className='uppercase text-xl text-white w-full rounded-lg bg-yellow1 text-center p-3'>go back home</Link>
+          </div>
+        </div>
+      }
     </div>
   )
 }

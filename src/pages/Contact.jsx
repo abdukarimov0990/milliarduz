@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { contact, platforms } from '../data/data';
 import call from "../img/call.png"
 import medal from "../img/medal.avif"
+import { Link } from 'react-router';
 const Contact = () => {
   const [openInput, setOpenInput] = useState(false);
   const [selectValue, setSelectValue] = useState("DEFAULT");
@@ -116,7 +117,7 @@ const Contact = () => {
             <img src={medal} alt="" className='w-32 mb-5' />
             <h3 className='font-bold text-3xl mb-2'>Request sent successfully</h3>
             <p className=' opacity-40 text-base max-w-[328px] text-center mb-6'>Your request has been successfully sent and we will contact you shortly</p>
-            <Link to="/" className='uppercase text-xl text-white w-full rounded-lg bg-yellow1 text-center p-3'>go back home</Link>
+            <Link to="/contact" className='uppercase text-xl text-white w-full rounded-lg bg-yellow1 text-center p-3'>go back home</Link>
           </div>
         </div>
       }
