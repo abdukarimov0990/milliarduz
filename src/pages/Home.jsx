@@ -41,16 +41,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 const Home = () => {
-  
+
   // variables
   const [open, Setopen] = useState(false);
   const [show, Setshow] = useState(false);
   const [openArray, SetopenArray] = useState(false);
   const [openInput, setOpenInput] = useState(false);
   const [Array, SetArray] = useState([]);
+  const [numberValue, setNumberValue] = useState("+998 ");
   const [selectValue, setSelectValue] = useState("DEFAULT");
   const [textValue, setTextValue] = useState("");
-  const [numberValue, setNumberValue] = useState("");
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const [openId, setOpenId] = useState(null);
@@ -83,7 +83,7 @@ const Home = () => {
       e.preventDefault(); // Formani yuborishni to‘xtatish
       alert("Siz telefon raqamni xato kiritdingiz");
       return;
-    }  
+    }
     const form = e.target;
     const formData = new FormData(form);
     try {
@@ -105,6 +105,27 @@ const Home = () => {
       console.error("Xato shundan iborat", error);
     }
   };
+  const formatPhoneNumber = (value) => {
+    let numbers = value.replace(/\D/g, ""); // Faqat raqamlarni olish
+    if (!numbers.startsWith("998")) {
+      numbers = "998"; // Avtomatik +998 qo‘shish
+    }
+    numbers = numbers.slice(0, 12); // Maksimal 12 ta raqam
+
+    let formatted = "+998 ";
+
+    if (numbers.length > 3) formatted += `(${numbers.slice(3, 5)}) `;
+    if (numbers.length > 5) formatted += `${numbers.slice(5, 8)}-`;
+    if (numbers.length > 8) formatted += `${numbers.slice(8, 10)}-`;
+    if (numbers.length > 10) formatted += `${numbers.slice(10, 12)}`;
+
+    return formatted;
+  };
+
+  const fill = (e) => {
+    setNumberValue(formatPhoneNumber(e.target.value));
+  };
+
   return (
     <div className='font-Mondrope flex flex-col'>
       {/* hero */}
@@ -332,7 +353,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>18%</h3>
               </div>
             </li>
-          
+
             <li className='flex items-center flex-row-reverse w-full lg:w-auto lg:flex-row gap-6 mb-4'>
               <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
                 <img src={basket} alt="basket" className='w-8 opacity-40' />
@@ -389,7 +410,7 @@ const Home = () => {
                 <h3 className='absolute rotate-[-19deg] '>18%</h3>
               </div>
             </li>
-          
+
             <li className='flex items-center gap-6 mb-4 '>
               <div className="bg-gradient-to-br from-first to-second rounded-lg border-black border p-4 flex items-center h-full gap-6">
                 <img src={basket} alt="basket" className='w-8 opacity-40' />
@@ -601,7 +622,18 @@ const Home = () => {
             <h2 className='text-2xl mb-4'>Fill out the form</h2>
             <form action="https://sheetdb.io/api/v1/dgi3dg5vywhil" method='POST' onSubmit={handleSubmit} className='flex flex-col gap-4'>
               <input type="text" name='data[Ism]' value={textValue} onChange={(e) => setTextValue(e.target.value)} required placeholder='Write your name' className='p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full' />
-              <input type="tel" inputmode="numeric" pattern="[0-9\s]+" maxLength="19" name='data[Telefon]' value={numberValue} onChange={(e) => setNumberValue(e.target.value)} required placeholder='+998 (__) ___-__-__' className='appearance-none no-spinner p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full' />
+              <input
+                type="tel"
+                inputMode="numeric"
+                pattern="[0-9\s]+"
+                maxLength="19"
+                name="data[Telefon]"
+                value={numberValue}
+                onChange={fill}
+                required
+                placeholder="+998 (__) ___-__-__"
+                className="appearance-none no-spinner p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus:border-yellow1 focus:border-2 w-full"
+              />
               <select name='data[Summa]' onChange={(e) => setSelectValue(e.target.value)} value={selectValue} className="p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full">
                 <option value="DEFAULT" disabled >Annual income </option>
                 <option value="from 0 to 1000$" className='text-black'>from 0 to 1000$</option>

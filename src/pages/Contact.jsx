@@ -7,7 +7,7 @@ const Contact = () => {
   const [openInput, setOpenInput] = useState(false);
   const [selectValue, setSelectValue] = useState("DEFAULT");
   const [textValue, setTextValue] = useState("");
-  const [numberValue, setNumberValue] = useState("");
+  const [numberValue, setNumberValue] = useState("+998");
   const isFormValid = textValue.trim() !== "" && numberValue.trim() !== "" && selectValue !== "DEFAULT";
   const [formData, setFormData] = useState({});
   const handleChange = (e) => {
@@ -44,6 +44,28 @@ const Contact = () => {
       console.error("Xato shundan iborat", error);
     }
   };
+  const formatPhoneNumber = (value) => {
+    let numbers = value.replace(/\D/g, ""); // Faqat raqamlarni olish
+    if (!numbers.startsWith("998")) {
+      numbers = "998"; // Avtomatik +998 qo‘shish
+    }
+    numbers = numbers.slice(0, 12); // Maksimal 12 ta raqam
+
+    let formatted = "+998 ";
+
+    if (numbers.length > 3) formatted += `(${numbers.slice(3, 5)}) `;
+    if (numbers.length > 5) formatted += `${numbers.slice(5, 8)}-`;
+    if (numbers.length > 8) formatted += `${numbers.slice(8, 10)}-`;
+    if (numbers.length > 10) formatted += `${numbers.slice(10, 12)}`;
+
+    return formatted;
+  };
+
+  const fill = (e) => {
+    setNumberValue(formatPhoneNumber(e.target.value));
+  };
+
+
   return (
     <div className='text-white font-Mandrope'>
       <section className='py-16 text-white'>
@@ -67,8 +89,18 @@ const Contact = () => {
               <h2 className='text-2xl mb-4'>Fill out the form</h2>
               <form action="https://sheetdb.io/api/v1/dgi3dg5vywhil" method='POST' onSubmit={handleSubmit} className='flex flex-col gap-4 mb-4'>
                 <input type="text" name='data[Ism]' value={textValue} onChange={(e) => setTextValue(e.target.value)} required placeholder='Write your name' className='p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full' />
-                <input type="tel" inputmode="numeric" pattern="[0-9\s]+" maxLength="19" name='data[Telefon]' value={numberValue} onChange={(e) => setNumberValue(e.target.value)} required placeholder='+998 (__) ___-__-__'className='appearance-none no-spinner p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full' />
-                <select name='data[Summa]' onChange={(e) => setSelectValue(e.target.value)} value={selectValue} className="p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full">
+                <input
+                type="tel"
+                inputMode="numeric"
+                pattern="[0-9\s]+"
+                maxLength="19"
+                name="data[Telefon]"
+                value={numberValue}
+                onChange={fill}
+                required
+                placeholder="+998 (__) ___-__-__"
+                className="appearance-none no-spinner p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus:border-yellow1 focus:border-2 w-full"
+              />                <select name='data[Summa]' onChange={(e) => setSelectValue(e.target.value)} value={selectValue} className="p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full">
                   <option value="DEFAULT" disabled >Annual income </option>
                   <option value="from 0 to 1000$" className='text-black'>from 0 to 1000$</option>
                   <option value="from 1000 to 10 000$" className='text-black'>from 1000 to 10 000$</option>
