@@ -54,7 +54,7 @@ const Home = () => {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const [openId, setOpenId] = useState(null);
-  const isFormValid = textValue.trim() !== "" && numberValue.trim() !== "" && selectValue !== "DEFAULT";
+  const isFormValid = textValue.trim() !== "" && numberValue.trim() !== "" && selectValue.trim() !== "DEFAULT";
   const toggleFAQ = (id) => {
     setOpenId(openId === id ? null : id);
   };
@@ -68,9 +68,6 @@ const Home = () => {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
 
   };
-  const isTure = ()=>{
-    numberValue.length = 12;
-  }
   // push to sheets
   const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({});
@@ -82,7 +79,7 @@ const Home = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (numberValue.length < 12) {
+    if (numberValue.length < 19) {
       e.preventDefault(); // Formani yuborishni to‘xtatish
       alert("Siz telefon raqamni xato kiritdingiz");
       return;
@@ -604,7 +601,7 @@ const Home = () => {
             <h2 className='text-2xl mb-4'>Fill out the form</h2>
             <form action="https://sheetdb.io/api/v1/dgi3dg5vywhil" method='POST' onSubmit={handleSubmit} className='flex flex-col gap-4'>
               <input type="text" name='data[Ism]' value={textValue} onChange={(e) => setTextValue(e.target.value)} required placeholder='Write your name' className='p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full' />
-              <input type="number" name='data[Telefon]' value={isTure ? numberValue : ""} onChange={(e) => setNumberValue(e.target.value)} required placeholder='+998' className='appearance-none no-spinner p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full' />
+              <input type="tel" inputmode="numeric" pattern="[0-9\s]+" maxLength="19" name='data[Telefon]' value={numberValue} onChange={(e) => setNumberValue(e.target.value)} required placeholder='+998 (__) ___-__-__' className='appearance-none no-spinner p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full' />
               <select name='data[Summa]' onChange={(e) => setSelectValue(e.target.value)} value={selectValue} className="p-3 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full">
                 <option value="DEFAULT" disabled >Annual income </option>
                 <option value="from 0 to 1000$" className='text-black'>from 0 to 1000$</option>
