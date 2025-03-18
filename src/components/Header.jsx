@@ -1,28 +1,32 @@
-import React, { useState } from 'react';
+import React, { useRef, useState} from 'react';
 import hamburger from "../img/hamburger.png";
 import { NavLink, Link } from 'react-router';
 import close from "../img/close.png";
 
 const Header = () => {
+  const ref = useRef(null);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <div>
+    <div ref={ref}>
       <header className='py-5 font-Mandrope fixed w-screen z-50  bg-transparent'>
         <div className="container flex justify-between items-center">
           <div className="flex items-center gap-5">
-            <Link to="/" className='border-gray-500/10 border rounded-lg text-4xl text-white bg-gradient-to-br from-first to-second backdrop-blur-xs py-3 px-5 inline-flex font-Mandrope'>M</Link>
-            <nav className='hidden md:inline-flex border-gray-500/10 border rounded-lg text-white bg-gradient-to-br from-first to-second backdrop-blur-xs py-5 px-8 font-Mandrope'>
+            <Link onClick={scrollToTop} to="/" className='border-gray-500/10 border rounded-lg text-4xl text-white bg-gradient-to-br from-first to-second backdrop-blur-xs py-3 px-5 inline-flex font-Mandrope'>M</Link>
+            <nav className='hidden lg:inline-flex border-gray-500/10 border rounded-lg text-white bg-gradient-to-br from-first to-second backdrop-blur-xs py-5 px-8 font-Mandrope'>
               <ul className='flex gap-4 items-center text-white'>
-                <li><NavLink to="/cases" className='opacity-40 hover:opacity-100'>CASES</NavLink></li>
-                <li><NavLink to="/about" className='opacity-40 hover:opacity-100'>ABOUT TEAM</NavLink></li>
-                <li><NavLink to="/contact" className='opacity-40 hover:opacity-100'>CONTACT</NavLink></li>
+                <li><NavLink onClick={scrollToTop} to="/cases" className='opacity-40 hover:opacity-100'>CASES</NavLink></li>
+                <li><NavLink onClick={scrollToTop} to="/about" className='opacity-40 hover:opacity-100'>ABOUT TEAM</NavLink></li>
+                <li><NavLink onClick={scrollToTop} to="/contact" className='opacity-40 hover:opacity-100'>CONTACT</NavLink></li>
               </ul>
             </nav>
           </div>
-          <div className="hidden md:inline-flex">
-            <Link to="/contact" className='py-5 px-8 bg-gradient-to-br from-yellow1 to-yellow2 hover:from-yellow2 hover:to-yellow1 ease-in-out duration-500 rounded-lg border border-yellowBorder text-white'>BECOME A MEMBER</Link>
+          <div className="hidden lg:inline-flex">
+            <Link onClick={scrollToTop} to="/contact" className='py-5 px-8 bg-gradient-to-br from-yellow1 to-yellow2 hover:from-yellow2 hover:to-yellow1 ease-in-out duration-500 rounded-lg border border-yellowBorder text-white'>BECOME A MEMBER</Link>
           </div>
-          <div onClick={() => setOpenMenu(!openMenu)} className="p-5 md:hidden bg-gradient-to-br from-first to-second rounded-lg border border-border cursor-pointer">
+          <div onClick={() => setOpenMenu(!openMenu)} className="p-5 lg:hidden bg-gradient-to-br from-first to-second rounded-lg border border-border cursor-pointer">
             <img src={hamburger} alt="hamburger" />
           </div>
         </div>
@@ -33,11 +37,11 @@ const Header = () => {
           <button onClick={()=> setOpenMenu(false)} className=''><img src={close} alt="close" className='absolute z-80  top-5 right-5' /></button>
           <nav className=' w-full text-white  pb-5 pt-15 px-8 flex flex-col items-center'>
             <ul className='flex flex-col gap-4 items-center text-white'>
-              <li><NavLink to="/" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>HOME</NavLink></li>
-              <li><NavLink to="/cases" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>CASES</NavLink></li>
-              <li><NavLink to="/about" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>ABOUT TEAM</NavLink></li>
-              <li><NavLink to="/contact" className='opacity-40 hover:opacity-100' onClick={() => setOpenMenu(false)}>CONTACT</NavLink></li>
-              <Link to="/contact" className='py-5 px-8 bg-gradient-to-br from-yellow1 to-yellow2 rounded-lg border border-yellowBorder text-white' onClick={() => setOpenMenu(false)}>BECOME A MEMBER</Link>
+              <li><NavLink onClick={scrollToTop}to="/" className='opacity-40 hover:opacity-100' >HOME</NavLink></li>
+              <li><NavLink onClick={scrollToTop}to="/cases" className='opacity-40 hover:opacity-100' >CASES</NavLink></li>
+              <li><NavLink onClick={scrollToTop}to="/about" className='opacity-40 hover:opacity-100' >ABOUT TEAM</NavLink></li>
+              <li><NavLink onClick={scrollToTop}to="/contact" className='opacity-40 hover:opacity-100' >CONTACT</NavLink></li>
+              <Link onClick={scrollToTop}to="/contact" className='py-5 px-8 bg-gradient-to-br from-yellow1 to-yellow2 rounded-lg border border-yellowBorder text-white'>BECOME A MEMBER</Link>
             </ul>
           </nav>
         </div>

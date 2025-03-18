@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link, NavLink } from 'react-router'
 import instagram from "../img/instagram.png"
 import facebook from "../img/facebook.png"
 import telegram from "../img/telegram.png"
 import youtube from "../img/youtube.png"
 const Footer = () => {
+  const ref = useRef(null);
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+};
   return (
-    <footer className='font-Mandrope w-full max-w-[1320px] mx-auto bg-gradient-to-br from-first to-second py-5 rounded-xl'>
+    <footer ref={ref} className='font-Mandrope w-full max-w-[1320px] mx-auto bg-gradient-to-br from-first to-second py-5 rounded-xl'>
       <div className="container ">
-        <div className="flex flex-col md:flex-row  justify-between items-star text-startt md:text-center  md:items-center gap-y-5 md:gap-0">
-          <Link to="/" className=' border-gray-500/10 border rounded-lg text-4xl text-yellow-600 bg-gradient-to-br from-first to-second  py-3 px-5 max-w-17 font-Mandrope'>M</Link>
+        <div className="flex flex-col lg:flex-row  justify-between items-star text-startt lg:text-center  lg:items-center gap-y-5 lg:gap-0">
+          <Link to="/" onClick={scrollToTop} className=' border-gray-500/10 border rounded-lg text-4xl text-yellow-600 bg-gradient-to-br from-first to-second  py-3 px-5 max-w-17 font-Mandrope'>M</Link>
           <nav>
             <ul className='flex gap-5 text-white items-center'>
-              <li><Link to="/" className='opacity-40 hover:opacity-100 '>MAIN</Link></li>
-              <li><NavLink to="/cases" className='opacity-40 hover:opacity-100'>CASES</NavLink></li>
-              <li ><NavLink to="/about" className='opacity-40 hover:opacity-100  '>ABOUT TEAM</NavLink></li>
-              <li ><NavLink to="/contact" className='opacity-40 hover:opacity-100  '>CONTACT</NavLink></li>
+              <li><Link onClick={scrollToTop} to="/" className='opacity-40 hover:opacity-100 '>MAIN</Link></li>
+              <li><NavLink onClick={scrollToTop} to="/cases" className='opacity-40 hover:opacity-100'>CASES</NavLink></li>
+              <li ><NavLink onClick={scrollToTop} to="/about" className='opacity-40 hover:opacity-100  '>ABOUT TEAM</NavLink></li>
+              <li ><NavLink onClick={scrollToTop} to="/contact" className='opacity-40 hover:opacity-100  '>CONTACT</NavLink></li>
             </ul>
           </nav>
           <ul className='flex gap-4'>
@@ -26,7 +30,7 @@ const Footer = () => {
           </ul>
         </div>
         <hr className='mt-6 text-white/10' />
-        <div className="flex flex-col md:flex-row justify-between text-white/10 pt-3">
+        <div className="flex flex-col lg:flex-row justify-between text-white/10 pt-3">
           <p>© 2024 Milliard Club. All rights reserved</p>
           <a href="https://abba.uz/ru" className='hover:text-white'>by Abba Marketing</a>
         </div>

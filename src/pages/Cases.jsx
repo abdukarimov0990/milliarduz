@@ -18,7 +18,7 @@ const Cases = () => {
             keyslarimiz <span className='text-white/40'>bilan tanishing</span>
           </h1>
         </div>
-        <ul className='grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-3'>
+        <ul className='grid grid-cols-1 lg:grid-cols-3 gap-y-10 gap-x-3'>
           {
             cases.map(function (keys) {
               return (

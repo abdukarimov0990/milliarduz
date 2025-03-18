@@ -84,9 +84,9 @@ const About = () => {
   return (
     <div className="text-white font-Mandrope">
       {/* home  */}
-      <section className={`text-center py-64 mt-[-200px]  bg-no-repeat bg-center bg-cover h-screen`} style={{ backgroundImage: `url(${bg})` }}>
-        <div className="absolute inset-0 bg-black/70 h-[103vh]"></div>
-        <div className="container">
+      <section className={`text-center md:text-start py-64 mt-[-100px]  bg-no-repeat bg-center bg-cover h-screen`} style={{ backgroundImage: `url(${bg})` }}>
+        <div className="absolute inset-0 bg-black/70 h-[102vh]"></div>
+        <div className="container mt-[-150px] md:mt-0">
           <div className="w-full max-w-[500px] relative z-10 ">
             <h1 className='text-white uppercase text-5xl leading-15 mb-4'>
               about "milliard"<br /> <span className='text-white/40'>bussines club</span>
@@ -105,7 +105,7 @@ const About = () => {
               information about <br /><span className='text-white/40'>milliard club</span>
             </h1>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 " >
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 " >
             <div className="row-span-5 w-full bg-second border border-border p-7 rounded-xl flex flex-col">
               <img src={milliardFlag} alt="milliardFLag" className='w-full rounded-lg mb-4 ' />
               <h3 className='text-2xl mb-3'>About club</h3>
@@ -179,10 +179,10 @@ const About = () => {
         </div>
         <div className="w-full max-w-screen mx-auto ">
           <ul className='flex flex-col gap-5 text-center mx-auto'>
-            <ul className='flex flex-col md:flex-row  gap-5 justify-center md:justify-end'>
+            <ul className='flex flex-col lg:flex-row  gap-5 justify-center lg:justify-end'>
               {photos.slice(0, 4).map(function (photo) {
                 return (
-                  <li onClick={() => SetopenPhoto(true)} className='mx-auto md:mx-0 md:w-auto relative cursor-pointer'>
+                  <li onClick={() => SetopenPhoto(true)} className='mx-auto lg:mx-0 lg:w-auto relative cursor-pointer'>
                     <img src={photo.img} alt="photo" className='w-90 rounded-lg' />
                     <div className="absolute p-5 w-full h-full top-10">
                       <h3 className='absolute bottom-13 text-lg'>Summit name after Omar hali</h3>
@@ -192,10 +192,10 @@ const About = () => {
                 )
               })}
             </ul> 
-            <ul className='flex flex-col md:flex-row gap-5 justify-center md:justify-start'>
+            <ul className='flex flex-col lg:flex-row gap-5 justify-center lg:justify-start'>
               {photos.slice(4, 8).map(function (photo) {
                 return (
-                  <li onClick={() => SetopenPhoto(true)} className='mx-auto md:mx-0 md:w-auto relative  cursor-pointer'>
+                  <li onClick={() => SetopenPhoto(true)} className='mx-auto lg:mx-0 lg:w-auto relative  cursor-pointer'>
                     <img src={photo.img} alt="photo" className='w-90 rounded-lg' />
                     <div className="absolute p-5 w-full h-full top-10">
                       <h3 className='absolute bottom-13 text-lg'>Summit name after Omar hali</h3>
@@ -218,7 +218,7 @@ const About = () => {
               meet the team<br /><span className='text-white/40'>members</span>
             </h1>
           </div>
-          <ul className="grid grid-cols-1 md:grid-cols-4 gap-5">
+          <ul className="grid grid-cols-1 lg:grid-cols-4 gap-5">
             {
               team.map(function (t) {
                 return (
@@ -245,14 +245,14 @@ const About = () => {
               GET TO KNOW THE OPINIONS<br /> <span className='text-white/40'>OF OUR CLUB MEMBERS</span>
             </h1>
           </div>
-          <ul className='grid grid-cols-1 md:grid-cols-4 gap-1'>
+          <ul className='grid grid-cols-1 lg:grid-cols-4 gap-1'>
             {opinions.map(function (opinion) {
               return (
                 <li onClick={() => openVideo(opinion)} className='cursor-pointer flex flex-col gap-3'>
                   <div className="relative h-[410px] w-full">
                     <img src={opinion.img} alt="memeber_img" className='h-[410px] w-full rounded-lg absolute' />
                     <button className='absolute right-3 top-4 py-3 pl-3 pr-2.5 cursor-pointer rounded-full bg-white'><img src={play} alt="play button" /></button>
-                    <h2 className='text-lg bg-gradient-to-br from-first to-second absolute bottom-3 left-3 backdrop-blur-md py-2 px-3 border-black border rounded-full  '>{opinion.name}</h2>
+                    <h2 className='text-lg bg-gradient-to-br from-first to-second absolute bottom-3 left-3 backdrop-blur-lg py-2 px-3 border-black border rounded-full  '>{opinion.name}</h2>
                   </div>
                   <div className="p-5 bg-gradient-to-br from-first to-second rounded-lg border-border border">
                     <h3 className='text-lg mb-2'>{opinion.Job}</h3>
@@ -276,7 +276,7 @@ const About = () => {
           </div>
 
         </div>
-        <ul className="grid grid-cols-1 mx-auto max-w-[1220px] md:grid-cols-7 md:max-w-full gap-3 w-full ">
+        <ul className="grid grid-cols-1 mx-auto max-w-[1220px] lg:grid-cols-7 lg:max-w-full gap-3 w-full ">
             {
               logos.map(function (logo){
                 return(
@@ -298,7 +298,7 @@ const About = () => {
             </h1>
           </div>
           <div className="flex gap-10 items-start">
-            <div className="hidden md:block w-[266px] h-[299px] bg-gradient-to-br mt-10 border  rounded-2xl  from-first to-second  border-border"></div>
+            <div className="hidden lg:block w-[266px] h-[299px] bg-gradient-to-br mt-10 border  rounded-2xl  from-first to-second  border-border"></div>
             <div className="w-full mx-auto mt-8 space-y-3">
               {faqData.map(({ id, question, answer }) => (
                 <div className={`w-full flex flex-col items-start p-8 border-border border rounded-2xl bg-gradient-to-br from-first to-second `}>
@@ -326,7 +326,7 @@ const About = () => {
       </section>
       {/* contact  */}
       <section className='py-16 text-white'>
-        <div className="w-full max-w-[1220px] flex-col md:flex-row  flex gap-10 mx-auto p-8 bg-gradient-to-br from-first to-second border border-border rounded-xl">
+        <div className="w-full max-w-[1220px] flex-col lg:flex-row  flex gap-10 mx-auto p-8 bg-gradient-to-br from-first to-second border border-border rounded-xl">
           <div className="w-full max-w-[650px]">
             <div className="mb-10">
               <button className='border mb-3 border-black bg-gradient-to-br from-first to-second py-1 px-5 uppercase text-white/40 rounded-lg'>CONTACT</button>
@@ -334,7 +334,7 @@ const About = () => {
                 Please complete the form <br /> <span className='text-white/40'>to join our  club</span>
               </h1>
             </div>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-10">
+            <ul className="grid grid-cols-1 lg:grid-cols-2 gap-y-10">
               {
                 contact.map(function (cont) {
                   return (
@@ -387,7 +387,7 @@ const About = () => {
         </div>
       }
       {open && <div onClick={() => Setopen(false)} className="z-60  h-screen fixed inset-0 w-full max-w-screen  bg-black/50 backdrop-blur-lg flex items-center justify-center text-white text-2xl">
-        <iframe  src="https://www.youtube.com/embed/uTFursWSzVk" title="Milliard 11-soni | Biznesga 3D nazar bilan qarash | Abdukarim Mirzayev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" className="w-[300px] h-[300px] md:w-[760px] md:h-[439px]" allowfullscreen></iframe>
+        <iframe  src="https://www.youtube.com/embed/uTFursWSzVk" title="Milliard 11-soni | Biznesga 3D nazar bilan qarash | Abdukarim Mirzayev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" className="w-[300px] h-[300px] lg:w-[760px] lg:h-[439px]" allowfullscreen></iframe>
       </div>}
       
       {
@@ -398,7 +398,7 @@ const About = () => {
               <div className="p-5 bg-gray-400 rounded-lg relative">
                 <button onClick={() => SetopenArray(false)} className='cursor-pointer absolute bg-yellow1 p-4 rounded-full right-0 border-border border top-[-50px]'><img src={close} alt="close_btn" className='w-2' /></button>
                 <iframe
-                  className='mb-3 w-[250px] h-[250px] md:w-[580px] md:h-[339px]'
+                  className='mb-3 w-[250px] h-[250px] lg:w-[580px] lg:h-[339px]'
                  
                   src={opinion.iframe}>
                 </iframe>

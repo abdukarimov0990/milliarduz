@@ -42,13 +42,13 @@ const Contact = () => {
               </h1>
             </div>
           </div>
-          <div className="w-full max-w-[1220px] gap-4 mx-auto flex flex-col md:flex-row mb-10">
+          <div className="w-full max-w-[1220px] gap-4 mx-auto flex flex-col lg:flex-row mb-10">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.2515133443956!2d69.28091531542246!3d41.30561237927025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b472695f6db%3A0xfae2abf20295e158!2sMilliard%20club!5e0!3m2!1sen!2s!4v1649240695478!5m2!1sen!2s"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              className=' w-auto md:w-[2000px] rounded-2xl '>
+              className=' w-auto lg:w-[2000px] rounded-2xl '>
             </iframe>          <div className="w-full bg-form p-8 rounded-lg ">
               <h2 className='text-2xl mb-4'>Fill out the form</h2>
               <form action="https://sheetdb.io/api/v1/dgi3dg5vywhil" method='POST' onSubmit={handleSubmit} className='flex flex-col gap-4 mb-4'>
@@ -66,7 +66,7 @@ const Contact = () => {
                 <textarea name='data[Xabar]' placeholder='Messege...' className='p-3 h-25 bg-input/10 border-white/10 border rounded-lg outline-0 focus: focus:border-yellow1 focus:border-2 w-full'></textarea>
                 <input type="submit" value="SEND" disabled={!isFormValid} className={`p-3 bg-white text-black text-center rounded-lg text-xl ${!isFormValid ? "opacity-40" : ""}`} />
               </form>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-10">
+              <ul className="grid grid-cols-1 lg:grid-cols-2 gap-y-10">
                 {
                   contact.slice(2, 4).map(function (cont) {
                     return (
@@ -83,7 +83,7 @@ const Contact = () => {
               </ul>
             </div>
           </div>
-          <ul className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+          <ul className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
             {
               platforms.map(function (platform) {
                 return (

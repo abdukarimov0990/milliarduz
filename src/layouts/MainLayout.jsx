@@ -4,10 +4,11 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const MainLayout = () => {
+  
   return (
-    <div className='flex flex-col min-h-screen     bg-[#131212] py-4'>
+    <div className='flex flex-col min-h-screen body bg-[#131212] py-4'>
       <Header></Header>
-      <main className='grow mt-[200px] '>
+      <main className='grow mt-[100px] '>
         <Outlet />
       </main>
       <Footer></Footer>
