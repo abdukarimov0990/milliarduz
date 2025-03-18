@@ -17,17 +17,30 @@ const Contact = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formElement = e.target;
-    const formDataObject = new FormData(formElement);
+    if (numberValue.length < 12) {
+      e.preventDefault(); // Formani yuborishni to‘xtatish
+      alert("Siz telefon raqamni xato kiritdingiz");
+      return;
+    }  
+    const form = e.target;
+    const formData = new FormData(form);
     try {
-      const response = await fetch(formElement.action, {
+      const response = await fetch(form.action, {
         method: "POST",
-        body: formDataObject,
+        body: formData,
       });
-      const result = await response.json();
-      setOpenInput(true);
+
+      if (response.ok) {
+        setOpenInput(true)
+        setTextValue("");
+        setNumberValue("");
+        setSelectValue("DEFAULT");
+        setMessage("");
+      } else {
+        alert("Nmadur xato ketdi");
+      }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Xato shundan iborat", error);
     }
   };
   return (

@@ -53,6 +53,11 @@ const About = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (numberValue.length < 12) {
+      e.preventDefault(); // Formani yuborishni to‘xtatish
+      alert("Siz telefon raqamni xato kiritdingiz");
+      return;
+    }  
     const form = e.target;
     const formData = new FormData(form);
     try {
@@ -60,18 +65,18 @@ const About = () => {
         method: "POST",
         body: formData,
       });
-  
+
       if (response.ok) {
-        alert("Form successfully submitted!");
+        setOpenInput(true)
         setTextValue("");
         setNumberValue("");
         setSelectValue("DEFAULT");
         setMessage("");
       } else {
-        alert("Failed to submit the form.");
+        alert("Nmadur xato ketdi");
       }
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("Xato shundan iborat", error);
     }
   };
   const [open, Setopen] = useState(false);
